@@ -1,0 +1,928 @@
+projeto:
+  id: TEBASFIN-VALORA
+  nome: "TebasFin Gestora - Valora"
+  data_base: 2026-09-20
+
+pacotes_trabalho:
+  - id: PT-001
+    nome: "Governança do escopo e arquitetura"
+    descricao: "Consolidar backlog, decisões arquiteturais, dependências entre serviços e critérios de pronto."
+    workstream: "Arquitetura e Governança"
+    status: em_arquitetura
+    prioridade: alta
+    inicio: 2026-09-20
+    fim: 2026-09-30
+    esforco: 8
+    recursos: [Arquitetura, PO, Backend, QA]
+    dependencias: []
+    tarefas:
+      - id: PT-001.1
+        nome: "Consolidar backlog funcional e arquitetural"
+        descricao: "Reunir Trello, solicitações do projeto e fontes oficiais, eliminando duplicidades e classificando vigente, implementado, proposta e lacuna."
+        workstream: "Arquitetura e Governança"
+        status: em_arquitetura
+        prioridade: alta
+        inicio: 2026-09-20
+        fim: 2026-09-22
+        esforco: 2
+        recursos: [Arquitetura, PO]
+        dependencias: []
+
+      - id: PT-001.2
+        nome: "Revisar dependências entre serviços"
+        descricao: "Validar fronteiras entre Gestora, Core, Security, Workflow, Frontend, Originador e trilha Peers/Lake."
+        workstream: "Arquitetura e Governança"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-09-22
+        fim: 2026-09-24
+        esforco: 2
+        recursos: [Arquitetura, Backend]
+        dependencias: [PT-001.1]
+
+      - id: PT-001.3
+        nome: "Consolidar decisões arquiteturais pendentes"
+        descricao: "Listar decisões que alteram cronograma, dependências ou escopo funcional."
+        workstream: "Arquitetura e Governança"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-09-24
+        fim: 2026-09-26
+        esforco: 2
+        recursos: [Arquitetura, PO]
+        dependencias: [PT-001.2]
+
+      - id: PT-001.4
+        nome: "Atualizar documentação oficial necessária"
+        descricao: "Registrar decisões aprovadas nas fontes oficiais do projeto."
+        workstream: "Arquitetura e Governança"
+        status: planejado
+        prioridade: media
+        inicio: 2026-09-26
+        fim: 2026-09-28
+        esforco: 1
+        recursos: [Arquitetura, PO]
+        dependencias: [PT-001.3]
+
+      - id: PT-001.5
+        nome: "Definir critérios de pronto por pacote"
+        descricao: "Padronizar critérios mínimos de arquitetura, desenvolvimento, testes, homologação e documentação."
+        workstream: "Arquitetura e Governança"
+        status: planejado
+        prioridade: media
+        inicio: 2026-09-28
+        fim: 2026-09-30
+        esforco: 1
+        recursos: [Arquitetura, QA, PO]
+        dependencias: [PT-001.4]
+
+
+  - id: PT-002
+    nome: "Base operacional da Gestora"
+    descricao: "Consolidar Fundos, Participantes, documentos, permissões, workflows cadastrais e UX operacional."
+    workstream: "Gestora e Cadastros"
+    status: em_desenvolvimento
+    prioridade: alta
+    inicio: 2026-09-20
+    fim: 2026-10-09
+    esforco: 15
+    recursos: [Backend, Frontend, QA, PO]
+    dependencias: [PT-001]
+    tarefas:
+      - id: PT-002.1
+        nome: "Consolidar cadastro e lifecycle de Fundos"
+        descricao: "Fechar pendências funcionais do ciclo Em cadastro, publicação e ativação."
+        workstream: "Cadastro do Fundo"
+        status: em_desenvolvimento
+        prioridade: alta
+        inicio: 2026-09-20
+        fim: 2026-09-24
+        esforco: 3
+        recursos: [Backend, Frontend, QA]
+        dependencias: []
+
+      - id: PT-002.2
+        nome: "Consolidar Participantes e vínculos por Fundo"
+        descricao: "Revisar papéis, vigência, visibilidade, histórico e experiência de cadastro."
+        workstream: Participantes
+        status: planejado
+        prioridade: alta
+        inicio: 2026-09-23
+        fim: 2026-09-28
+        esforco: 3
+        recursos: [Backend, Frontend, QA]
+        dependencias: []
+
+      - id: PT-002.3
+        nome: "Consolidar documentos e repositório operacional"
+        descricao: "Garantir classificação, validade, storage, abertura, auditoria e repositório configurado pela Empresa."
+        workstream: "Documentos e Storage"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-09-25
+        fim: 2026-09-30
+        esforco: 3
+        recursos: [Backend, Frontend, QA]
+        dependencias: []
+
+      - id: PT-002.4
+        nome: "Revisar permissões e escopos"
+        descricao: "Verificar cobertura de rotinas, segregação Gestora x Originador e proteção das ações."
+        workstream: Security
+        status: planejado
+        prioridade: alta
+        inicio: 2026-09-28
+        fim: 2026-10-02
+        esforco: 2
+        recursos: [Backend, QA]
+        dependencias: []
+
+      - id: PT-002.5
+        nome: "Consolidar workflows cadastrais"
+        descricao: "Validar bindings, publicação, histórico, acompanhamento visual e tratamento de rejeições."
+        workstream: Workflow
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-01
+        fim: 2026-10-06
+        esforco: 2
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-002.1]
+
+      - id: PT-002.6
+        nome: "Refinar UX operacional da Gestora"
+        descricao: "Corrigir inconsistências de tabelas, formulários, erros, responsividade, tipografia e padrões em packages/ui."
+        workstream: "Frontend e UX"
+        status: planejado
+        prioridade: media
+        inicio: 2026-10-03
+        fim: 2026-10-09
+        esforco: 2
+        recursos: [Frontend, QA, PO]
+        dependencias: []
+
+
+  - id: PT-003
+    nome: "HERMES - Ingestão de dados e integrações"
+    descricao: "Estruturar fontes, layouts, contratos de ingestão, integrações prioritárias e preparação TebasFin x Lake."
+    workstream: "Dados e Integrações"
+    status: planejado
+    prioridade: alta
+    inicio: 2026-09-28
+    fim: 2026-11-06
+    esforco: 24
+    recursos: [Arquitetura, Backend, Dados, DevOps, QA]
+    dependencias: [PT-001]
+    tarefas:
+      - id: PT-003.1
+        nome: "Inventariar fontes, arquivos e integrações para os fundos V8 e Mais Todos"
+        descricao: "Consolidar administradores, originadores, bancos, registradoras, APIs, S3/buckets e layouts utilizados por Fundo."
+        workstream: "Dados e Integrações"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-09-28
+        fim: 2026-10-02
+        esforco: 4
+        recursos: [Arquitetura, Backend, Dados, PO]
+        dependencias: []
+
+      - id: PT-003.2
+        nome: "Padronizar contratos de ingestão"
+        descricao: "Definir metadados, identificadores, idempotência, versionamento e tratamento de erro. Incluindo os contatos de API relacionados"
+        workstream: "Dados e Integrações"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-01
+        fim: 2026-10-09
+        esforco: 4
+        recursos: [Arquitetura, Backend, Dados]
+        dependencias: [PT-003.1]
+
+      - id: PT-003.3
+        nome: "Evoluir repositório operacional"
+        descricao: "Validar filesystem atual e preparar providers adicionais, especialmente S3/Lake."
+        workstream: "Infra e Storage"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-06
+        fim: 2026-10-16
+        esforco: 4
+        recursos: [Backend, DevOps, Dados, QA]
+        dependencias: [PT-003.2]
+
+      - id: PT-003.4
+        nome: "Implementar integrações prioritárias"
+        descricao: "Planejar e executar integrações classificadas como obrigatórias para a operação piloto. Como certificadora, openbank e outros"
+        workstream: "Integrações"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-12
+        fim: 2026-10-30
+        esforco: 6
+        recursos: [Backend, Dados, QA]
+        dependencias: [PT-003.2]
+
+      - id: PT-003.5
+        nome: "Implementar observabilidade das cargas"
+        descricao: "Registrar origem, execução, quantidade, duração, erro, reprocessamento e rastreabilidade."
+        workstream: "Dados e Observabilidade"
+        status: planejado
+        prioridade: media
+        inicio: 2026-10-19
+        fim: 2026-10-30
+        esforco: 3
+        recursos: [Backend, Dados, DevOps, QA]
+        dependencias: [PT-003.2]
+
+      - id: PT-003.6
+        nome: "Preparar contrato TebasFin x Lake"
+        descricao: "Definir responsabilidades de ingestão, consumo operacional, processamento em lote e retorno de resultados."
+        workstream: "Arquitetura de Dados"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-26
+        fim: 2026-11-06
+        esforco: 3
+        recursos: [Arquitetura, Backend, Dados]
+        dependencias: [PT-003.3, PT-003.4]
+
+      - id: PT-003.7
+        nome: "APIs Administrador"
+        descricao: "Construção das APIS para a administradora, no processo de cessao e retorno de cessao."
+        workstream: Performance
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-05
+        fim: 2026-11-13
+        esforco: 4
+        recursos: [Backend, QA, Dados]
+        dependencias: [PT-005.4, PT-005.5]
+
+
+  - id: PT-004
+    nome: "Concessão, elegibilidade e validação de lastro"
+    descricao: "Consolidar lote, staging, elegibilidade, validação de lastro, retorno de concessão e exceções."
+    workstream: "Concessão e Elegibilidade"
+    status: em_desenvolvimento
+    prioridade: alta
+    inicio: 2026-09-20
+    fim: 2026-10-30
+    esforco: 28
+    recursos: [Backend, Frontend, QA, PO]
+    dependencias: [PT-001, PT-002]
+    tarefas:
+      - id: PT-004.1
+        nome: "Consolidar fluxo de entrada da Concessão"
+        descricao: "Fechar lote, staging, repositório, upload, importação, status e idempotência."
+        workstream: "Concessão"
+        status: em_desenvolvimento
+        prioridade: alta
+        inicio: 2026-09-20
+        fim: 2026-09-28
+        esforco: 4
+        recursos: [Backend, Frontend, QA]
+        dependencias: []
+
+      - id: PT-004.2
+        nome: "Consolidar motor de Elegibilidade"
+        descricao: "Completar catálogo, resolvers, operadores, parâmetros por Fundo e persistência dos resultados."
+        workstream: Elegibilidade
+        status: em_desenvolvimento
+        prioridade: alta
+        inicio: 2026-09-22
+        fim: 2026-10-02
+        esforco: 5
+        recursos: [Backend, QA]
+        dependencias: []
+
+      - id: PT-004.3
+        nome: "Implementar regras faltantes prioritárias"
+        descricao: "Desenvolver apenas regras com fonte canônica e requisito aprovado."
+        workstream: Elegibilidade
+        status: planejado
+        prioridade: alta
+        inicio: 2026-09-29
+        fim: 2026-10-09
+        esforco: 4
+        recursos: [Backend, QA, PO]
+        dependencias: [PT-004.2]
+
+      - id: PT-004.4
+        nome: "Consolidar validação de lastro"
+        descricao: "Estruturar existência, integridade, documentos e evidências necessárias por tipo de Fundo."
+        workstream: "Validação de Lastro"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-05
+        fim: 2026-10-16
+        esforco: 4
+        recursos: [Backend, Frontend, QA, PO]
+        dependencias: [PT-004.1]
+
+      - id: PT-004.5
+        nome: "Consolidar retorno de Concessão"
+        descricao: "Gerar arquivo com contrato, status e motivos completos de reprovação ou erro."
+        workstream: "Concessão"
+        status: em_teste
+        prioridade: alta
+        inicio: 2026-09-20
+        fim: 2026-09-25
+        esforco: 3
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-004.2]
+
+      - id: PT-004.6
+        nome: "Integrar exceções com Workflow"
+        descricao: "Definir quando uma exceção exige revisão humana, aprovação ou simples registro operacional."
+        workstream: Workflow
+        status: planejado
+        prioridade: media
+        inicio: 2026-10-12
+        fim: 2026-10-21
+        esforco: 4
+        recursos: [Backend, Frontend, QA, PO]
+        dependencias: [PT-004.2, PT-004.4]
+
+      - id: PT-004.7
+        nome: "Homologar Concessão e Elegibilidade por Fundo piloto"
+        descricao: "Executar cenários reais, reprocessamento, erros, duplicidades, regras e retorno."
+        workstream: "Homologação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-21
+        fim: 2026-10-30
+        esforco: 4
+        recursos: [QA, Backend, Frontend, PO]
+        dependencias: [PT-004.3, PT-004.4, PT-004.5, PT-004.6]
+
+
+  - id: PT-005
+    nome: "Carteira, ledger e posição financeira"
+    descricao: "Consolidar carteira, ledger, valor presente, posição corrente e preparação para processamento volumétrico."
+    workstream: "Carteira e Financeiro"
+    status: planejado
+    prioridade: alta
+    inicio: 2026-10-05
+    fim: 2026-11-13
+    esforco: 26
+    recursos: [Arquitetura, Backend, Frontend, QA]
+    dependencias: [PT-001, PT-004]
+    tarefas:
+      - id: PT-005.1
+        nome: "Consolidar visão de carteira"
+        descricao: "Fechar listagem, detalhe, filtros, totais, posições e experiência para Contrato e Título."
+        workstream: Carteira
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-05
+        fim: 2026-10-13
+        esforco: 4
+        recursos: [Backend, Frontend, QA]
+        dependencias: []
+
+      - id: PT-005.2
+        nome: "Consolidar ledger financeiro"
+        descricao: "Validar operações, lançamentos, alocações, estornos, ajustes, renegociação e idempotência."
+        workstream: Ledger
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-08
+        fim: 2026-10-19
+        esforco: 5
+        recursos: [Backend, QA]
+        dependencias: []
+
+      - id: PT-005.3
+        nome: "Implementar cálculo diário de valor presente"
+        descricao: "Calcular VP bruto e líquido de PDD por parcela, com base configurável pela Empresa."
+        workstream: "Motor Financeiro"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-15
+        fim: 2026-10-28
+        esforco: 5
+        recursos: [Arquitetura, Backend, QA]
+        dependencias: [PT-005.2]
+
+      - id: PT-005.4
+        nome: "Consolidar posição financeira corrente"
+        descricao: "Definir atualização corrente, recuperação de falhas e consistência entre eventos e posição."
+        workstream: "Motor Financeiro"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-22
+        fim: 2026-11-02
+        esforco: 4
+        recursos: [Backend, QA]
+        dependencias: [PT-005.2, PT-005.3]
+
+      - id: PT-005.5
+        nome: "Preparar processamento volumétrico para Lake"
+        descricao: "Isolar executor e contrato para futura execução distribuída sem alterar regra de negócio."
+        workstream: "Arquitetura de Dados"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-29
+        fim: 2026-11-09
+        esforco: 4
+        recursos: [Arquitetura, Backend, Dados]
+        dependencias: [PT-003.6, PT-005.3]
+
+      - id: PT-005.6
+        nome: "Validar performance e volumetria"
+        descricao: "Medir consultas, lotes, índices, paginação e capacidade de processamento em cenários representativos."
+        workstream: Performance
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-05
+        fim: 2026-11-13
+        esforco: 4
+        recursos: [Backend, QA, Dados]
+        dependencias: [PT-005.4, PT-005.5]
+
+
+  - id: PT-006
+    nome: "Baixas, pagamentos e transferências"
+    descricao: "Implementar ingestão, identificação, liquidação e tratamento de exceções de movimentações financeiras."
+    workstream: "Baixas e Movimentações"
+    status: planejado
+    prioridade: alta
+    inicio: 2026-10-19
+    fim: 2026-11-27
+    esforco: 24
+    recursos: [Backend, Frontend, QA, PO]
+    dependencias: [PT-005]
+    tarefas:
+      - id: PT-006.1
+        nome: "Inventariar layouts e eventos de baixa"
+        descricao: "Consolidar arquivos, CNABs, APIs e tipos de baixa por administrador e Fundo."
+        workstream: Baixas
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-19
+        fim: 2026-10-23
+        esforco: 3
+        recursos: [Backend, PO]
+        dependencias: []
+
+      - id: PT-006.2
+        nome: "Implementar ingestão das baixas"
+        descricao: "Receber arquivos ou eventos, validar estrutura e preservar rastreabilidade."
+        workstream: Baixas
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-22
+        fim: 2026-10-30
+        esforco: 4
+        recursos: [Backend, QA]
+        dependencias: [PT-006.1]
+
+      - id: PT-006.3
+        nome: "Implementar identificação de ativos e parcelas"
+        descricao: "Associar pagamentos e baixas aos objetos corretos sem depender apenas de igualdade de valor."
+        workstream: Baixas
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-28
+        fim: 2026-11-06
+        esforco: 4
+        recursos: [Backend, QA]
+        dependencias: [PT-006.2]
+
+      - id: PT-006.4
+        nome: "Implementar liquidação parcial, total e antecipada"
+        descricao: "Aplicar eventos financeiros via ledger e refletir corretamente a posição."
+        workstream: "Movimentações"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-02
+        fim: 2026-11-13
+        esforco: 5
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-005.2, PT-006.3]
+
+      - id: PT-006.5
+        nome: "Implementar tratamento de exceções"
+        descricao: "Tratar valores não identificados, duplicidades, atrasos, inconsistências e reapresentações."
+        workstream: Baixas
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-09
+        fim: 2026-11-18
+        esforco: 3
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-006.3]
+
+      - id: PT-006.6
+        nome: "Integrar aprovações quando aplicável"
+        descricao: "Encaminhar ao Workflow somente eventos que exijam decisão humana segundo regra aprovada."
+        workstream: Workflow
+        status: planejado
+        prioridade: media
+        inicio: 2026-11-12
+        fim: 2026-11-20
+        esforco: 2
+        recursos: [Backend, QA, PO]
+        dependencias: [PT-006.5]
+
+      - id: PT-006.7
+        nome: "Homologar baixas com layouts reais"
+        descricao: "Executar cenários de diferentes administradores e tipos de movimentação."
+        workstream: "Homologação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-19
+        fim: 2026-11-27
+        esforco: 3
+        recursos: [QA, Backend, PO]
+        dependencias: [PT-006.4, PT-006.5, PT-006.6]
+
+
+  - id: PT-007
+    nome: "Conciliação e batimento de bases"
+    descricao: "Implementar conferência de estoque, conciliação de pagamentos, gestão de divergências e homologação D+1."
+    workstream: "Conciliação"
+    status: planejado
+    prioridade: alta
+    inicio: 2026-10-26
+    fim: 2026-11-27
+    esforco: 20
+    recursos: [Backend, Frontend, QA, PO]
+    dependencias: [PT-005, PT-006]
+    tarefas:
+      - id: PT-007.1
+        nome: "Formalizar fontes de comparação"
+        descricao: "Definir posição TebasFin, posição do administrador, data-base, versão e origem."
+        workstream: "Conciliação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-26
+        fim: 2026-10-30
+        esforco: 3
+        recursos: [Backend, PO, QA]
+        dependencias: []
+
+      - id: PT-007.2
+        nome: "Definir chaves e regras de correspondência"
+        descricao: "Estabelecer chave por contrato, título e parcela, campos comparáveis e tolerâncias."
+        workstream: "Conciliação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-10-29
+        fim: 2026-11-04
+        esforco: 3
+        recursos: [Backend, PO, QA]
+        dependencias: [PT-007.1]
+
+      - id: PT-007.3
+        nome: "Implementar conferência de base"
+        descricao: "Classificar Match, Divergente, Ausente e Pendente preservando evidências."
+        workstream: "Conciliação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-02
+        fim: 2026-11-11
+        esforco: 4
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-007.2]
+
+      - id: PT-007.4
+        nome: "Implementar conciliação de pagamentos"
+        descricao: "Comparar movimentos financeiros e posição, sem misturar com conferência de estoque."
+        workstream: "Conciliação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-09
+        fim: 2026-11-18
+        esforco: 4
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-006.4, PT-007.2]
+
+      - id: PT-007.5
+        nome: "Implementar gestão de divergências"
+        descricao: "Criar motivos, pendências, responsáveis, SLA e retorno operacional."
+        workstream: "Conciliação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-13
+        fim: 2026-11-20
+        esforco: 2
+        recursos: [Backend, Frontend, QA, PO]
+        dependencias: [PT-007.3, PT-007.4]
+
+      - id: PT-007.6
+        nome: "Criar visões consolidadas e detalhadas"
+        descricao: "Disponibilizar KPIs, totais, filtros, detalhamento e histórico de execuções."
+        workstream: "Frontend e UX"
+        status: planejado
+        prioridade: media
+        inicio: 2026-11-16
+        fim: 2026-11-24
+        esforco: 2
+        recursos: [Frontend, Backend, QA]
+        dependencias: [PT-007.3, PT-007.4]
+
+      - id: PT-007.7
+        nome: "Homologar batimento D+1"
+        descricao: "Executar rotina com arquivos reais e validar divergências conhecidas."
+        workstream: "Homologação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-23
+        fim: 2026-11-27
+        esforco: 2
+        recursos: [QA, Backend, PO]
+        dependencias: [PT-007.5, PT-007.6]
+
+
+  - id: PT-008
+    nome: "Relatórios, dashboards e alertas"
+    descricao: "Priorizar relatórios, implementar indicadores, widgets, alertas, notificações e exportações."
+    workstream: "Relatórios e UX Operacional"
+    status: planejado
+    prioridade: media
+    inicio: 2026-11-02
+    fim: 2026-12-04
+    esforco: 18
+    recursos: [Frontend, Backend, QA, PO, Dados]
+    dependencias: [PT-004, PT-005, PT-007]
+    tarefas:
+      - id: PT-008.1
+        nome: "Priorizar relatórios operacionais"
+        descricao: "Classificar relatórios por uso diário, semanal, mensal, regulatório e gerencial."
+        workstream: "Relatórios"
+        status: planejado
+        prioridade: media
+        inicio: 2026-11-02
+        fim: 2026-11-06
+        esforco: 2
+        recursos: [PO, Backend, Dados]
+        dependencias: []
+
+      - id: PT-008.2
+        nome: "Implementar indicadores operacionais"
+        descricao: "Criar métricas de carteira, aquisições, elegibilidade, liquidação, concentração e exceções."
+        workstream: Indicadores
+        status: planejado
+        prioridade: media
+        inicio: 2026-11-05
+        fim: 2026-11-13
+        esforco: 4
+        recursos: [Backend, Dados, Frontend, QA]
+        dependencias: [PT-008.1]
+
+      - id: PT-008.3
+        nome: "Evoluir Home e widgets configuráveis"
+        descricao: "Disponibilizar componentes de carteira, Fundos, pendências, concentração, evolução e processos."
+        workstream: "Frontend e UX"
+        status: planejado
+        prioridade: media
+        inicio: 2026-11-09
+        fim: 2026-11-20
+        esforco: 4
+        recursos: [Frontend, Backend, QA]
+        dependencias: [PT-008.2]
+
+      - id: PT-008.4
+        nome: "Implementar alertas críticos"
+        descricao: "Criar alertas baseados em eventos, vencimentos, falhas de processo e desenquadramentos."
+        workstream: Alertas
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-16
+        fim: 2026-11-25
+        esforco: 3
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-008.2]
+
+      - id: PT-008.5
+        nome: "Consolidar notificações e atividades"
+        descricao: "Unificar apresentação de pendências, tarefas e notificações sem duplicar lógica de Workflow."
+        workstream: "Notificações"
+        status: planejado
+        prioridade: media
+        inicio: 2026-11-20
+        fim: 2026-11-30
+        esforco: 3
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-008.4]
+
+      - id: PT-008.6
+        nome: "Implementar exportações e relatórios operacionais"
+        descricao: "Padronizar CSV, planilhas e documentos necessários para operação e auditoria."
+        workstream: "Relatórios"
+        status: planejado
+        prioridade: media
+        inicio: 2026-11-26
+        fim: 2026-12-04
+        esforco: 2
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-008.1]
+
+
+  - id: PT-009
+    nome: "Migração e convivência FACTA/Anima"
+    descricao: "Planejar piloto, migração histórica, equivalência de dados, convivência paralela e desligamento por ondas."
+    workstream: "Migração FACTA/Anima"
+    status: planejado
+    prioridade: alta
+    inicio: 2026-11-16
+    fim: 2027-01-21
+    esforco: 20
+    recursos: [Arquitetura, Backend, Dados, QA, PO]
+    dependencias: [PT-003, PT-004, PT-005, PT-006, PT-007]
+    tarefas:
+      - id: PT-009.1
+        nome: "Definir Fundo ou grupo piloto"
+        descricao: "Escolher piloto por volume, complexidade, risco operacional e qualidade das fontes."
+        workstream: "Migração"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-16
+        fim: 2026-11-20
+        esforco: 2
+        recursos: [Arquitetura, PO, QA]
+        dependencias: []
+
+      - id: PT-009.2
+        nome: "Definir escopo histórico de migração"
+        descricao: "Estabelecer quais ativos, eventos, documentos e anos de histórico serão migrados."
+        workstream: "Migração"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-19
+        fim: 2026-11-25
+        esforco: 3
+        recursos: [Arquitetura, Dados, PO]
+        dependencias: [PT-009.1]
+
+      - id: PT-009.3
+        nome: "Mapear equivalência de dados"
+        descricao: "Relacionar campos e conceitos FACTA/Anima com o modelo canônico do TebasFin."
+        workstream: "Migração"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-23
+        fim: 2026-12-01
+        esforco: 3
+        recursos: [Arquitetura, Backend, Dados]
+        dependencias: [PT-009.2]
+
+      - id: PT-009.4
+        nome: "Construir processo de carga e reconciliação"
+        descricao: "Importar dados e comparar saldos, posições, contratos, parcelas e eventos."
+        workstream: "Migração"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-11-30
+        fim: 2026-12-09
+        esforco: 4
+        recursos: [Backend, Dados, QA]
+        dependencias: [PT-009.3]
+
+      - id: PT-009.5
+        nome: "Executar convivência paralela"
+        descricao: "Rodar TebasFin e plataforma atual em paralelo durante janela definida."
+        workstream: "Migração"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-12-07
+        fim: 2026-12-16
+        esforco: 4
+        recursos: [Backend, QA, PO, Dados]
+        dependencias: [PT-009.4]
+
+      - id: PT-009.6
+        nome: "Definir critérios de desligamento"
+        descricao: "Formalizar critérios de qualidade, cobertura funcional, estabilidade e aceite operacional."
+        workstream: "Migração"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-12-09
+        fim: 2026-12-16
+        esforco: 2
+        recursos: [Arquitetura, QA, PO]
+        dependencias: [PT-009.4]
+
+      - id: PT-009.7
+        nome: "Planejar migração por ondas"
+        descricao: "Agrupar Fundos por complexidade, dependências e criticidade."
+        workstream: "Migração"
+        status: planejado
+        prioridade: media
+        inicio: 2026-12-14
+        fim: 2026-12-18
+        esforco: 2
+        recursos: [Arquitetura, PO, QA]
+        dependencias: [PT-009.5, PT-009.6]
+
+
+  - id: PT-0099
+    nome: Treinamento
+    descricao: "Consolidar treinamento"
+    workstream: Treinamento
+    status: planejado
+    prioridade: alta
+    inicio: 2026-12-01
+    fim: 2027-01-02
+    esforco: 18
+    recursos: [QA, Backend, Frontend, DevOps, PO]
+    dependencias: [PT-002, PT-003, PT-004, PT-005, PT-006, PT-007, PT-008, PT-009]
+
+  - id: PT-010
+    nome: "Homologação final e estabilização"
+    descricao: "Consolidar testes integrados, homologação, correções, documentação, go-live e estabilização."
+    workstream: "Homologação e Go-live"
+    status: planejado
+    prioridade: alta
+    inicio: 2026-12-31
+    fim: 2027-02-01
+    esforco: 18
+    recursos: [QA, Backend, Frontend, DevOps, PO]
+    dependencias: [PT-002, PT-003, PT-004, PT-005, PT-006, PT-007, PT-008, PT-009]
+    tarefas:
+      - id: PT-010.1
+        nome: "Consolidar plano de testes integrado"
+        descricao: "Cobrir fluxos ponta a ponta, regressão, segurança, performance e permissões."
+        workstream: QA
+        status: planejado
+        prioridade: alta
+        inicio: 2026-12-07
+        fim: 2026-12-11
+        esforco: 2
+        recursos: [QA, Backend, Frontend]
+        dependencias: []
+
+      - id: PT-010.2
+        nome: "Executar homologação com usuários-chave"
+        descricao: "Validar jornadas operacionais com Operações, Controladoria, Gestão, Tecnologia e demais áreas."
+        workstream: "Homologação"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-12-10
+        fim: 2026-12-18
+        esforco: 4
+        recursos: [QA, PO, Backend, Frontend]
+        dependencias: [PT-010.1]
+
+      - id: PT-010.3
+        nome: "Corrigir divergências de homologação"
+        descricao: "Classificar defeitos por severidade e fechar itens bloqueantes antes da produção."
+        workstream: "Estabilização"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-12-17
+        fim: 2026-12-29
+        esforco: 4
+        recursos: [Backend, Frontend, QA]
+        dependencias: [PT-010.2]
+
+      - id: PT-010.4
+        nome: "Executar testes não funcionais"
+        descricao: "Validar performance, segurança, observabilidade, restart, backup e recuperação."
+        workstream: "QA e Infra"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-12-21
+        fim: 2026-12-30
+        esforco: 3
+        recursos: [QA, DevOps, Backend]
+        dependencias: [PT-010.1]
+
+      - id: PT-010.5
+        nome: "Consolidar documentação operacional"
+        descricao: "Atualizar documentação técnica, manual operacional, runbooks e critérios de suporte."
+        workstream: "Documentação"
+        status: planejado
+        prioridade: media
+        inicio: 2026-12-21
+        fim: 2027-01-04
+        esforco: 2
+        recursos: [PO, QA, Arquitetura]
+        dependencias: [PT-010.2]
+
+      - id: PT-010.6
+        nome: "Preparar entrada em produção"
+        descricao: "Validar ambiente, migrations, secrets, storage, monitoração, rollback e checklist de go-live."
+        workstream: "Infra e Go-live"
+        status: planejado
+        prioridade: alta
+        inicio: 2026-12-29
+        fim: 2027-01-05
+        esforco: 2
+        recursos: [DevOps, Backend, QA]
+        dependencias: [PT-010.3, PT-010.4]
+
+      - id: PT-010.7
+        nome: "Executar estabilização pós-go-live"
+        descricao: "Acompanhar incidentes, divergências e ajustes durante a janela inicial de operação."
+        workstream: "Estabilização"
+        status: planejado
+        prioridade: alta
+        inicio: 2027-01-05
+        fim: 2027-01-08
+        esforco: 1
+        recursos: [Backend, Frontend, QA, DevOps, PO]
+        dependencias: [PT-010.6]
+
+
