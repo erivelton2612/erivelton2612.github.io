@@ -1,26 +1,40 @@
-# TebasFin — Gantt YAML Editor
+# TebasFin — Editor YAML e Gantt
 
-Site estático pronto para GitHub Pages. A interface foi preservada a partir do HTML original, com CSS e JavaScript separados e o cronograma inicial extraído para `tebasfin_cronograma_macro_padrao.yaml`.
+Aplicação estática e autocontida para editar visualmente o cronograma do projeto TebasFin Gestora — Valora.
 
 ## Estrutura
 
-- `index.html` — página principal
-- `styles.css` — visual original
-- `app.js` — editor YAML + Gantt
-- `tebasfin_cronograma_macro_padrao.yaml` — cronograma carregado na abertura
-- `.nojekyll` — publicação direta no GitHub Pages
+```text
+tebasfin-gantt/
+├── index.html
+├── app.js
+├── styles.css
+├── README.md
+└── CONTEXTO_PRODUTO.md
+```
 
-## Publicar no GitHub Pages
+- `index.html`: estrutura semântica da interface e política de segurança.
+- `app.js`: comportamento do editor, parser YAML, dados iniciais e Gantt.
+- `styles.css`: identidade visual, layout responsivo e estados de edição.
+- `CONTEXTO_PRODUTO.md`: objetivo, escopo, regras e funcionalidades do produto.
 
-1. Crie um repositório no GitHub e envie estes arquivos para a branch `main`.
-2. Abra **Settings → Pages**.
-3. Em **Build and deployment**, selecione **Deploy from a branch**.
-4. Escolha `main` e `/ (root)`, depois salve.
+## Executar
 
-O site usa caminhos relativos e funciona tanto em `usuario.github.io/repositorio/` quanto em domínio próprio.
+Abra `index.html` em um navegador moderno. Não há instalação, compilação, backend ou dependências externas.
 
-## YAML
+## Comportamento dos dados
 
-Na abertura, o navegador busca `./tebasfin_cronograma_macro_padrao.yaml`. Em GitHub Pages esse arquivo é somente leitura no servidor. Alterações feitas no Gantt podem ser baixadas com **Baixar YAML**. Em Chrome/Edge, **Vincular YAML** permite escolher um arquivo YAML local e gravar nele automaticamente usando a File System Access API.
+- O planejamento inicial está incorporado em `app.js`.
+- Alterações feitas na interface permanecem durante a sessão atual.
+- **Baixar YAML** exporta o planejamento vigente.
+- **Restaurar exemplo** volta ao planejamento incorporado.
+- Preferências visuais de escala e painéis podem ser mantidas pelo navegador.
 
-> Observação: GitHub Pages é hospedagem estática; alterações feitas no navegador não fazem commit no repositório. Para publicar um cronograma alterado, substitua o YAML no repositório e faça novo commit/push.
+## Segurança
+
+- Não há chamadas de rede.
+- Não há autenticação, cookies, formulários de credenciais ou redirecionamentos.
+- JavaScript e CSS são carregados somente do próprio projeto.
+- A Content Security Policy bloqueia conexões externas, objetos incorporados e submissão de formulários.
+- O download do YAML ocorre apenas por ação explícita do usuário.
+
