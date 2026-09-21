@@ -727,7 +727,7 @@ pacotes_trabalho:
     status: planejado
     prioridade: alta
     inicio: 2026-11-16
-    fim: 2027-01-21
+    fim: 2026-12-29
     esforco: 20
     recursos: [Arquitetura, Backend, Dados, QA, PO]
     dependencias: [PT-003, PT-004, PT-005, PT-006, PT-007]
@@ -824,7 +824,7 @@ pacotes_trabalho:
     status: planejado
     prioridade: alta
     inicio: 2026-12-01
-    fim: 2027-01-02
+    fim: 2026-12-18
     esforco: 18
     recursos: [QA, Backend, Frontend, DevOps, PO]
     dependencias: [PT-002, PT-003, PT-004, PT-005, PT-006, PT-007, PT-008, PT-009]
@@ -835,8 +835,8 @@ pacotes_trabalho:
     workstream: "Homologação e Go-live"
     status: planejado
     prioridade: alta
-    inicio: 2026-12-31
-    fim: 2027-02-01
+    inicio: 2026-11-30
+    fim: 2027-01-01
     esforco: 18
     recursos: [QA, Backend, Frontend, DevOps, PO]
     dependencias: [PT-002, PT-003, PT-004, PT-005, PT-006, PT-007, PT-008, PT-009]
@@ -925,4 +925,16 @@ pacotes_trabalho:
         recursos: [Backend, Frontend, QA, DevOps, PO]
         dependencias: [PT-010.6]
 
+
+  - id: PT-011
+    nome: Go-Live
+    descricao: "Implementação V8 e Mais Todos"
+    workstream: "A definir"
+    status: planejado
+    prioridade: media
+    inicio: 2027-01-11
+    fim: 2027-01-15
+    esforco: 5
+    recursos: []
+    dependencias: []
 
