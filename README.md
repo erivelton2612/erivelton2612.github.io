@@ -1,40 +1,17 @@
-# TebasFin — Editor YAML e Gantt
+# TebasFin Gantt — versão estática para GitHub Pages
 
-Aplicação estática e autocontida para editar visualmente o cronograma do projeto TebasFin Gestora — Valora.
+Aplicação estática do cronograma TebasFin. Não possui autenticação, backend, integrações externas, Google Drive, Render ou acesso a arquivos locais do computador.
 
-## Estrutura
+## Segurança / funcionamento
 
-```text
-tebasfin-gantt/
-├── index.html
-├── app.js
-├── styles.css
-├── README.md
-└── CONTEXTO_PRODUTO.md
-```
+- Todos os arquivos são servidos pelo próprio GitHub Pages.
+- O único `fetch` carrega `tebasfin_cronograma_macro_padrao.yaml` do mesmo diretório/origem.
+- Não usa `showOpenFilePicker`, permissões de filesystem, cookies, formulários externos ou APIs de terceiros.
+- Content Security Policy restringe scripts, conexões, imagens e demais recursos à própria origem.
+- Alterações feitas no navegador ficam apenas na sessão e podem ser exportadas com **Baixar YAML**.
 
-- `index.html`: estrutura semântica da interface e política de segurança.
-- `app.js`: comportamento do editor, parser YAML, dados iniciais e Gantt.
-- `styles.css`: identidade visual, layout responsivo e estados de edição.
-- `CONTEXTO_PRODUTO.md`: objetivo, escopo, regras e funcionalidades do produto.
+## Publicação
 
-## Executar
+Envie os arquivos da raiz deste projeto para a raiz do repositório GitHub e ative **Settings → Pages → Deploy from a branch → main → /(root)**.
 
-Abra `index.html` em um navegador moderno. Não há instalação, compilação, backend ou dependências externas.
-
-## Comportamento dos dados
-
-- O planejamento inicial está incorporado em `app.js`.
-- Alterações feitas na interface permanecem durante a sessão atual.
-- **Baixar YAML** exporta o planejamento vigente.
-- **Restaurar exemplo** volta ao planejamento incorporado.
-- Preferências visuais de escala e painéis podem ser mantidas pelo navegador.
-
-## Segurança
-
-- Não há chamadas de rede.
-- Não há autenticação, cookies, formulários de credenciais ou redirecionamentos.
-- JavaScript e CSS são carregados somente do próprio projeto.
-- A Content Security Policy bloqueia conexões externas, objetos incorporados e submissão de formulários.
-- O download do YAML ocorre apenas por ação explícita do usuário.
-
+Arquivos principais: `index.html`, `styles.css`, `app.js`, `tebasfin_cronograma_macro_padrao.yaml` e `.nojekyll`.

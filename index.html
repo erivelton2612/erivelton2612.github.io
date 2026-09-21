@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cronograma estático do projeto TebasFin Gestora — Valora, com editor YAML e visualização Gantt.">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
 <title>TebasFin Gantt YAML Editor</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 <div class="wrapper">
@@ -17,7 +18,7 @@
   <div id="status" class="status"></div>
   <div id="layout" class="layout">
     <section id="yamlPanel" class="panel">
-      <div class="panel-head"><div class="panel-heading-copy"><div class="panel-title">Planejamento YAML</div><div class="meta">Dados incorporados ao editor</div></div><div class="actions"><div id="yamlCount" class="meta"></div><button id="syncYaml" class="primary compact">Aplicar YAML ao Gantt</button><button id="toggleYaml" class="collapse-btn" type="button" title="Minimizar YAML" aria-label="Minimizar painel YAML" aria-expanded="true">‹</button></div></div>
+      <div class="panel-head"><div class="panel-heading-copy"><div class="panel-title">tebasfin_cronograma_macro_padrao.yaml</div><div id="yamlFileStatus" class="meta">Arquivo do próprio site · edição local no navegador</div></div><div class="actions"><div id="yamlCount" class="meta"></div><button id="syncYaml" class="primary compact">Aplicar YAML ao Gantt</button><button id="toggleYaml" class="collapse-btn" type="button" title="Minimizar YAML" aria-label="Minimizar painel YAML" aria-expanded="true">‹</button></div></div>
       <textarea id="yamlEditor" spellcheck="false" aria-label="Editor YAML"></textarea>
     </section>
     <section id="ganttPanel" class="panel">
@@ -35,6 +36,6 @@
     </section>
   </div>
 </div>
-<script src="app.js" defer></script>
+<script src="./app.js"></script>
 </body>
 </html>
