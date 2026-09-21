@@ -7,7 +7,7 @@ let yamlFileHandle=null,yamlSaveTimer=null,yamlLoading=false,yamlWriteQueue=Prom
 const el=id=>document.getElementById(id),yamlEditor=el('yamlEditor'),gantt=el('gantt'),statusBox=el('status');
 const layout=el('layout'),yamlPanel=el('yamlPanel'),ganttPanel=el('ganttPanel'),toggleYaml=el('toggleYaml'),toggleGantt=el('toggleGantt');
 const collapsedItems=new Set();
-let viewScale='month',currentPxPerDay=SCALE_PX.month,ganttDirty=false;
+let viewScale='day',currentPxPerDay=SCALE_PX.day,ganttDirty=false;try{viewScale=localStorage.getItem('tebasfin-gantt-view-scale')||'day'}catch{}if(!SCALE_PX[viewScale])viewScale='day';
 function setPanelMode(mode='both'){
   const yamlCollapsed=mode==='yaml',ganttCollapsed=mode==='gantt';
   layout.classList.toggle('yaml-collapsed',yamlCollapsed);layout.classList.toggle('gantt-collapsed',ganttCollapsed);
@@ -58,5 +58,5 @@ toggleGantt.addEventListener('click',()=>setPanelMode(ganttPanel.classList.conta
 el('toggleAllRows').addEventListener('click',()=>{const branches=branchIds(),allCollapsed=branches.length===0||branches.every(id=>collapsedItems.has(id));collapsedItems.clear();if(!allCollapsed)branches.forEach(id=>collapsedItems.add(id));render();show(allCollapsed?'Todas as tarefas foram expandidas.':'Todas as tarefas foram recolhidas.')});
 document.addEventListener('click',e=>{const activeRow=gantt.querySelector('.g-row.editing');if(!activeRow||activeRow.querySelector('.row-left').contains(e.target))return;if(ganttDirty){ganttDirty=false;render()}else activeRow.classList.remove('editing')});
 yamlEditor.addEventListener('keydown',e=>{if(e.key==='Tab'){e.preventDefault();const s=yamlEditor.selectionStart,en=yamlEditor.selectionEnd;yamlEditor.value=yamlEditor.value.slice(0,s)+'  '+yamlEditor.value.slice(en);yamlEditor.selectionStart=yamlEditor.selectionEnd=s+2}});
-let savedPanelMode='yaml';setPanelMode(savedPanelMode);el('viewScale').value=viewScale;collapseAllBranches();syncYaml();render();loadReferencedYaml();
+let savedPanelMode='both';try{savedPanelMode=localStorage.getItem('tebasfin-gantt-panel-mode')||'both'}catch{}if(!['both','yaml','gantt'].includes(savedPanelMode))savedPanelMode='both';setPanelMode(savedPanelMode);el('viewScale').value=viewScale;collapseAllBranches();syncYaml();render();loadReferencedYaml();
 })();

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TebasFin Gantt YAML Editor</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <div><h1 id="pageTitle">TebasFin Gestora - Valora</h1><div id="pageSubtitle" class="sub">TEBASFIN-VALORA · Editor YAML + Gantt</div></div>
+    <details id="moreMenu" class="more-menu"><summary title="Mais opções" aria-label="Mais opções">...</summary><div class="menu-pop"><button id="downloadYaml">Baixar YAML</button><button id="reset" class="danger">Restaurar exemplo</button></div></details>
+  </div>
+  <div id="status" class="status"></div>
+  <div id="layout" class="layout">
+    <section id="yamlPanel" class="panel">
+      <div class="panel-head"><div class="panel-heading-copy"><div class="panel-title">tebasfin_cronograma_macro_padrao.yaml</div><div id="yamlFileStatus" class="meta">Arquivo relativo · aguardando vínculo para escrita</div></div><div class="actions"><div id="yamlCount" class="meta"></div><button id="linkYaml" class="compact" type="button">Vincular YAML</button><button id="syncYaml" class="primary compact">Aplicar YAML ao Gantt</button><button id="toggleYaml" class="collapse-btn" type="button" title="Minimizar YAML" aria-label="Minimizar painel YAML" aria-expanded="true">‹</button></div></div>
+      <textarea id="yamlEditor" spellcheck="false" aria-label="Editor YAML"></textarea>
+    </section>
+    <section id="ganttPanel" class="panel">
+      <div class="panel-head"><div class="panel-heading-copy gantt-heading"><button id="toggleAllRows" class="tree-all-toggle" type="button" title="Expandir todas as tarefas" aria-label="Expandir todas as tarefas" aria-expanded="false">▶</button><div><div class="panel-title">Cronograma / Gantt</div><div id="period" class="meta"></div></div></div><div class="actions"><label class="scale-control">Visualização <select id="viewScale"><option value="day">Dias</option><option value="week">Semanas</option><option value="month">Meses</option></select></label><div class="small">Arraste a barra para deslocar a atividade mantendo a duração.</div><button id="toggleGantt" class="collapse-btn" type="button" title="Minimizar Gantt" aria-label="Minimizar painel Gantt" aria-expanded="true">›</button></div></div>
+      <div id="ganttWrap" class="gantt-wrap" tabindex="0"><div id="gantt" class="gantt"></div></div>
+      <div class="row-add">
+        <select id="newParent" aria-label="Item pai"><option value="">Novo pacote de trabalho (raiz)</option></select>
+        <input id="newId" placeholder="ID (ex.: PT-007)">
+        <input id="newName" class="name" placeholder="Nome da nova atividade">
+        <input id="newDescription" class="name" placeholder="Detalhamento da tarefa (opcional)">
+        <input id="newStart" type="date"><input id="newEnd" type="date">
+        <button id="addRow" class="primary">+ Adicionar linha</button>
+      </div>
+      <div class="footer"><div class="legend"><span><i class="dot" style="background:#2f5bea"></i>Atividade</span><span><i class="dot" style="background:#d34b4b"></i>Data-base</span></div><span>Rolagem horizontal disponível no Gantt.</span></div>
+    </section>
+  </div>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
